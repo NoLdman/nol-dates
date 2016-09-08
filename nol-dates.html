@@ -4,7 +4,7 @@
 `nol-dates`
 i18n, a11y and mobile-friendly date-range picker
 
-@demo demo/index.html 
+@demo demo/index.html
 -->
 
 <dom-module id="nol-dates">
@@ -14,7 +14,7 @@ i18n, a11y and mobile-friendly date-range picker
         display: block;
       }
     </style>
-    <h2>Hello [[prop1]]</h2>
+    <h2>Hello [[prop1]]!!</h2>
   </template>
 
   <script>
@@ -27,6 +27,76 @@ i18n, a11y and mobile-friendly date-range picker
           type: String,
           value: 'nol-dates',
         },
+        /**
+         * Represents the currently selected start date in RFC 3339 format
+         * (e.g. 1990-12-31T23:59:60Z)
+         */
+        startDate: {
+          type: String
+        },
+        /**
+         * Represents the currently selected end date in RFC 3339 format
+         * (e.g. 1990-12-31T23:59:60Z)
+         */
+        endDate: {
+          type: String
+        },
+        /**
+         * Indicates the minimum number of days between the start date
+         * and the end date.
+         */
+         minNights: {
+           type: Number,
+           value: 0
+         },
+         /**
+          * Indicates the number of visible months at a time.
+          */
+         numberOfMonths: {
+           type: Number,
+           value: 1
+         },
+         /**
+          * The orientation prop indicates whether months
+          * are stacked on top of each other or displayed side-by-side.
+          * You can choose between "horizontal" and "vertical"
+          */
+         orientation: {
+           type: String,
+           value: "horizontal"
+         },
+         /**
+          * Represents a full-screen takeover.
+          * The DayPicker is rendered centrally on the screen, above
+          * the current plane. To close the datepicker, the user must
+          * either select a date or click the close button located at
+          * the top right of the screen.
+          */
+         fullscreen: {
+           type: Boolean,
+           value: false
+         },
+         /**
+          * Label for the start-date input.
+          */
+         startDateLabel: {
+           type: String,
+           value: "Start"
+         },
+         /**
+          * Labeld for the end-date input.
+          */
+         endDateLabel: {
+           type: String,
+           value: "End"
+         },
+         disabled: {
+           type: Boolean,
+           value: false
+         }
+      },
+      isDayBlocked: function() {
+
       },
 
     });
